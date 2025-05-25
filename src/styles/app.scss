@@ -1,2 +1,181 @@
 @import 'utils/variables';
 @import 'components/type';
+
+/* Version Desktop */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-sizing: border-box;
+    padding-left: 22px;
+    padding-right: 22px;
+    border-bottom: 1px solid black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; 
+}
+
+.Header h1{
+    font-family: "monotype grotesk", sans-serif;
+    font-weight: 100;
+    font-size: 25px;
+}
+
+.Content{
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    z-index: 7;
+    margin-top: 4em;
+}
+
+.Content h1{
+    font-family: "monotype-modern-display", sans-serif;
+    font-weight: 500;
+    font-size: 128px;
+    margin-left: 22px;
+}
+
+.Content h2{
+    font-family: "monotype-grotesque", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    margin-left: 22px;
+}
+
+.Content-title{
+    font-weight: 700;
+    width: 13rem;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 0 0 auto;
+    transition: 0.3s opacity;
+}
+
+.Content-image{
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    width: auto;
+    height: 100%;
+    min-width: 1.7em;
+    padding: 5px;
+    box-sizing: border-box;
+    flex: 1 0 auto;
+    transition: 0.3s opacity
+}
+
+.Content-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.Chapter1, .Chapter3, .Chapter5{
+    line-height: 1;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    border-width: 100%;
+    font-size: 120px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    height: 2em;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.Chapter2, .Chapter4{
+    line-height: 1;
+    border-width: 100%;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    font-size: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 2em;
+    transition: 0.6s;
+    cursor: pointer;
+}
+
+.scrolling-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    animation-iteration-count: infinite;
+ span {
+     display: inline-block;
+    animation: loop 15s linear infinite;
+    animation-play-state: paused;
+ }
+
+ span:hover {
+     animation-play-state: running;
+ }
+}
+
+@keyframes loop {
+ 0% {
+    transform: translateX(0%);
+ }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/*Overlay et détails des chapitres*/
+.Chapter-details{
+    display: none;
+    grid-template-columns: 50% 50%;
+    gap: 2rem;
+    animation: fadeIn 0.8s ease-in-out;
+
+}
+
+.Chapter-details.active{
+    display: grid;
+}
+
+.Column-left {
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid black;
+    padding : 1rem;
+}
+
+.Column-right {
+    padding: 1rem;
+    font-size: 1rem;
+    overflow-y: hidden;
+    position: relative;
+}
+
+/* Animation d’apparition */
+@keyframes fadeIn {
+ from {
+ opacity: 0;
+ transform: translateY(15px);
+ }
+ to {
+ opacity: 1;
+ transform: translateY(0);
+  }
+}
