@@ -43,13 +43,7 @@ html {
 .Content h1{
     font-family: "monotype-modern-display", sans-serif;
     font-weight: 500;
-    font-size: 128px;
-}
-
-.Content h2{
-    font-family: "monotype-grotesque", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
+    font-size: 112px;
 }
 
 .Chapter1, .Chapter2, .Chapter3, .Chapter4, .Chapter5{
@@ -68,15 +62,15 @@ html {
 }
 
 .Chapter3 {
-    background-color: #D9D9D9;
+    background-color: #e0e0e0;
 }
 
 .Chapter4 {
-    background-color: #cbcbcb;
+    background-color: #cecece;
 }
 
 .Chapter5 {
-    background-color: #adadad;
+    background-color: #c2c2c2;
 }
 
 
@@ -99,7 +93,7 @@ html {
     
  span {
     display: inline-block;
-    animation: loop 40s linear infinite;
+    animation: loop 45s linear infinite;
     animation-play-state: running;
  }
 
@@ -122,8 +116,22 @@ html {
     display: none;
     grid-template-columns: 50% 50%;
     gap: 1,3rem;
-    animation: fadeIn 0.8s ease-in-out;
+}
 
+.Chapter-details.chapter2 {
+    background-color: #F2F2F2;
+}
+
+.Chapter-details.chapter3 {
+    background-color: #e0e0e0;
+}
+
+.Chapter-details.chapter4 {
+    background-color: #cecece;
+}
+
+.Chapter-details.chapter5 {
+    background-color: #c2c2c2;
 }
 
 .Chapter-details.active{
@@ -135,12 +143,19 @@ html {
     display: flex;
     flex-direction: column;
     padding : 1rem;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 .Column-left p {
     font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 1rem;
+    font-family: "monotype-grotesque", sans-serif;
+}
+
+.Column-left .obvious {
+    font-size: 36px;
+    font-weight: 450;
 }
 
 .Column-right {
@@ -148,13 +163,13 @@ html {
     font-size: 1rem;
     overflow-y: hidden;
     position: relative;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 .Column-right img{
     width: 100%;
     height: auto;
-    padding : none; 
-    padding-bottom: 1em;
+    padding-bottom: 10px;
 }
 
 /* Animation d’apparition */
@@ -183,17 +198,8 @@ html {
     }
 
     .Content h1{
-        font-size: 44px;
+        font-size: 33px;
         margin-left: 10px;
-    }
-
-    .Content h2{
-        font-size: 15px;
-        margin-left: 10px;
-    }
-
-    .Content-image, .Content-title{
-       display: none;
     }
 
     .scrolling-container{
@@ -208,9 +214,18 @@ html {
     display: block;
     text-align: center;
     padding: 0.5rem 0;
-    font-size: 44px;
+    font-size: 33px;
   }
 
+  .Column-left p{
+    font-size: 14px
+  }
+
+  .Column-left .obvious {
+    font-size: 19px;
+    font-weight: 450;
+  }
+  
   .scrolling-container.intro::after {
     content: "#Intro";
   }
