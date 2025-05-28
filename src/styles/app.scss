@@ -58,19 +58,19 @@ html {
 }
 
 .Chapter2{
-    background-color: #F2F2F2
+    background-color: #F6FBFF;
 }
 
 .Chapter3 {
-    background-color: #e0e0e0;
+    background-color: #F1F9FF;
 }
 
 .Chapter4 {
-    background-color: #cecece;
+    background-color: #EEF6FC;
 }
 
 .Chapter5 {
-    background-color: #c2c2c2;
+    background-color: #E6F0F8;
 }
 
 
@@ -119,19 +119,19 @@ html {
 }
 
 .Chapter-details.chapter2 {
-    background-color: #F2F2F2;
+    background-color: #F6FBFF;
 }
 
 .Chapter-details.chapter3 {
-    background-color: #e0e0e0;
+    background-color: #F1F9FF;
 }
 
 .Chapter-details.chapter4 {
-    background-color: #cecece;
+    background-color: #EEF6FC;
 }
 
 .Chapter-details.chapter5 {
-    background-color: #c2c2c2;
+    background-color: #E6F0F8;
 }
 
 .Chapter-details.active{
@@ -143,14 +143,14 @@ html {
     display: flex;
     flex-direction: column;
     padding : 1rem;
-    animation: fadeIn 0.8s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .Column-left p {
     font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 1rem;
-    font-family: "monotype-grotesque", sans-serif;
+    font-family: "raleway", sans-serif;
 }
 
 .Column-left .obvious {
@@ -163,7 +163,7 @@ html {
     font-size: 1rem;
     overflow-y: hidden;
     position: relative;
-    animation: fadeIn 0.8s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .Column-right img{
@@ -176,7 +176,7 @@ html {
 @keyframes fadeIn {
  from {
  opacity: 0;
- transform: translateY(15px);
+ transform: translateY(25px);
  }
  to {
  opacity: 1;
@@ -217,6 +217,11 @@ html {
     font-size: 33px;
   }
 
+  .Column-right img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .Column-left p{
     font-size: 14px
   }
@@ -244,5 +249,33 @@ html {
 
   .scrolling-container.social::after {
     content: "Chap.3 : #Social";
+  }
+
+.Chapter-details {
+    display: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: auto; /* ou hauteur adaptée */
+  }
+
+.Chapter-details.active {
+    display: flex;
+  }
+
+  .Chapter-details > div {
+    flex: 0 0 80vw; /* chaque colonne prend 100% largeur écran */
+    scroll-snap-align: start;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .Column-right img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
 }
