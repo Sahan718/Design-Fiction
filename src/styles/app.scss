@@ -150,6 +150,7 @@ html {
     font-size: 1.2rem;
     line-height: 1.5;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     font-family: "raleway", sans-serif;
 }
 
@@ -198,7 +199,7 @@ html {
     }
 
     .Content h1{
-        font-size: 33px;
+        font-size: 59px;
         margin-left: 10px;
     }
 
@@ -206,9 +207,11 @@ html {
         position: relative;
     }
 
-    .scrolling-container span{
-        display: none;  
+    .scrolling-container .logo-scroll{
+        width: auto;
+        height: 60px;
     }
+
 
     .scrolling-container::after {
     display: block;
@@ -263,7 +266,7 @@ html {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     width: 100%;
-    height: auto; /* ou hauteur adaptée */
+    height: auto; 
   }
 
 .Chapter-details.active {
@@ -271,7 +274,7 @@ html {
   }
 
   .Chapter-details > div {
-    flex: 0 0 80vw; /* chaque colonne prend 100% largeur écran */
+    flex: 0 0 80vw; 
     scroll-snap-align: start;
     padding: 1rem;
     box-sizing: border-box;
