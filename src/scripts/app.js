@@ -14,3 +14,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const allChapters = document.querySelectorAll('.Chapter-details');
+
+    allChapters.forEach((chapter) => {
+      const leftColumn = chapter.querySelector('.Column-left');
+      const rightColumn = chapter.querySelector('.Column-right');
+
+      chapter.addEventListener('scroll', () => {
+        const scrollLeft = chapter.scrollLeft;
+        const containerWidth = chapter.offsetWidth;
+
+        if (scrollLeft < containerWidth * 0.4) {
+          leftColumn.style.opacity = '1';
+          rightColumn.style.opacity = '0.3';
+        } else {
+          leftColumn.style.opacity = '0.3';
+          rightColumn.style.opacity = '1';
+        }
+      });
+    });
+  });
+
+
+
+
+
+
+
+
