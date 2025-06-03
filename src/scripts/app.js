@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   document.addEventListener("DOMContentLoaded", () => {
+
     const allChapters = document.querySelectorAll('.Chapter-details');
 
     allChapters.forEach((chapter) => {
@@ -39,8 +40,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+function resetOpacityOnDesktop() {
+  if (window.innerWidth > 768) {
+    const allChapters = document.querySelectorAll('.Chapter-details');
+    allChapters.forEach((chapter) => {
+      const left = chapter.querySelector('.Column-left');
+      const right = chapter.querySelector('.Column-right');
 
+      // Supprime les styles JS (inline)
+      left.style.removeProperty('opacity');
+      right.style.removeProperty('opacity');
+    });
+  }
+}
 
+// Appelle une fois au chargement
+resetOpacityOnDesktop();
+
+// Appelle aussi à chaque resize
+window.addEventListener('resize', resetOpacityOnDesktop);
 
 
 

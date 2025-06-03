@@ -40,14 +40,13 @@ html {
     margin-top: 4em;
 }
 
-.Content h1{
+.Content h2{
     font-family: "monotype-modern-display", sans-serif;
     font-weight: 500;
     font-size: 112px;
 }
 
 .Chapter1, .Chapter2, .Chapter3, .Chapter4, .Chapter5{
-    border-width: 100%;
     font-size: 120px;
     display: flex;
     flex-direction: row;
@@ -90,6 +89,8 @@ html {
     justify-content: flex-start;
     white-space: nowrap;
     animation-iteration-count: infinite;
+}  
+    
 
 .logo-scroll {
     height: 1em;
@@ -107,7 +108,7 @@ html {
  span:hover {
      animation-play-state: paused;
  }
-}
+
 
 @keyframes loop {
  0% {
@@ -180,6 +181,12 @@ html {
     padding-bottom: 10px;
 }
 
+figcaption {
+    font-size: 15px;
+    font-family: "raleway", sans-serif;
+    font-style: italic;
+}
+
 /* Animation d’apparition */
 @keyframes fadeIn {
  from {
@@ -195,7 +202,7 @@ html {
 
 /* Version Mobile */
 
-@media (max-width: 768px) {
+@media (min-width: 390px) and (max-width: 768px) {
     .Header {
         padding-left: 10px;
         padding-right: 10px;
@@ -205,7 +212,7 @@ html {
         font-size: 20px;
     }
 
-    .Content h1{
+    .Content h2{
         font-size: 59px;
         margin-left: 10px;
     }
@@ -227,43 +234,43 @@ html {
     font-size: 33px;
   }
 
-  .Column-right img {
-    max-width: 100%;
-    height: auto;
-  }
+    .Column-right img {
+      max-width: 100%;
+      height: auto;
+    }
 
-  .Column-left {
-    border-right: 1px solid black;
-  }
+    .Column-left {
+      border-right: 1px solid black;
+    }
 
-  .Column-left p{
-    font-size: 14px
-  }
+    .Column-left p{
+      font-size: 14px
+    }
 
-  .Column-left .obvious {
-    font-size: 19px;
-    font-weight: 450;
-  }
-  
-  .scrolling-container.intro::after {
-    content: "#Intro";
-  }
+    .Column-left .obvious {
+      font-size: 19px;
+      font-weight: 450;
+    }
+    
+    .scrolling-container.intro::after {
+      content: "#Intro";
+    }
 
-  .scrolling-container.contexte::after {
-    content: "#Contexte";
-  }
+    .scrolling-container.contexte::after {
+      content: "#Contexte";
+    }
 
-  .scrolling-container.politique::after {
-    content: "Chap.1 : #Politique";
-  }
+    .scrolling-container.politique::after {
+      content: "Chap.1 : #Politique";
+    }
 
-  .scrolling-container.economie::after {
-    content: "Chap.2 : #Economie";
-  }
+    .scrolling-container.economie::after {
+      content: "Chap.2 : #Economie";
+    }
 
-  .scrolling-container.social::after {
-    content: "Chap.3 : #Social";
-  }
+    .scrolling-container.social::after {
+      content: "Chap.3 : #Social";
+    }
 
 .Chapter-details {
     display: none;
