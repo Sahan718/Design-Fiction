@@ -1,12 +1,12 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const chapters = document.querySelectorAll('[class^="Chapter"]:not(.Chapter-details)');
+  const chapters = document.querySelectorAll('[class^="chapter"]:not(.chapter-details)');
 
   chapters.forEach(chapter => {
     const nextElement = chapter.nextElementSibling;
 
-    if (nextElement && nextElement.classList.contains('Chapter-details')) {
+    if (nextElement && nextElement.classList.contains('chapter-details')) {
       chapter.addEventListener("click", () => {
         nextElement.classList.toggle("active");
       });
@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("DOMContentLoaded", () => {
 
-    const allChapters = document.querySelectorAll('.Chapter-details');
+    const allChapters = document.querySelectorAll('.chapter-details');
 
     allChapters.forEach((chapter) => {
-      const leftColumn = chapter.querySelector('.Column-left');
-      const rightColumn = chapter.querySelector('.Column-right');
+      const leftColumn = chapter.querySelector('.column-left');
+      const rightColumn = chapter.querySelector('.column-right');
 
       chapter.addEventListener('scroll', () => {
         const scrollLeft = chapter.scrollLeft;
@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function resetOpacityOnDesktop() {
   if (window.innerWidth > 768) {
-    const allChapters = document.querySelectorAll('.Chapter-details');
+    const allChapters = document.querySelectorAll('.chapter-details');
     allChapters.forEach((chapter) => {
-      const left = chapter.querySelector('.Column-left');
-      const right = chapter.querySelector('.Column-right');
+      const left = chapter.querySelector('.column-left');
+      const right = chapter.querySelector('.column-right');
 
       // Supprime les styles JS (inline)
       left.style.removeProperty('opacity');
