@@ -80,7 +80,7 @@ html {
 }
 
 
-
+/* Aidé par l'IA : de la ligne 101 à 119*/
 .scrolling-container {
     width: 100%;
     overflow: hidden;
@@ -91,7 +91,6 @@ html {
     animation-iteration-count: infinite;
 }  
     
-
 .logo-scroll {
     height: 1em;
     width: 200px;           
@@ -99,13 +98,13 @@ html {
     object-fit: contain;
 }
     
- span {
+ .scrolling-container span {
     display: inline-block;
     animation: loop 45s linear infinite;
     animation-play-state: running;
  }
 
- span:hover {
+ .scrolling-container:hover span {
      animation-play-state: paused;
  }
 
@@ -123,7 +122,7 @@ html {
 .chapter-details{
     display: none;
     grid-template-columns: 50% 50%;
-    gap: 1,3rem;
+    gap: 5px;
 }
 
 .chapter-details.chap2 {
@@ -167,6 +166,7 @@ html {
     font-weight: 450;
 }
 
+/* Aidé par IA : ligne 173 à 175*/
 .column-right {
     padding: 1rem;
     font-size: 1rem;
@@ -187,7 +187,7 @@ figcaption {
     font-style: italic;
 }
 
-/* Animation d’apparition */
+/* Animation d’apparition : aidé par IA */
 @keyframes fadeIn {
  from {
  opacity: 0;
@@ -252,6 +252,8 @@ figcaption {
       font-weight: 450;
     }
     
+    /* Aidé par l'IA : de la ligne 257 à 259, reprise du code .scrolling-container.intro::after avec mes modifications pour la suite sans IA */
+
     .scrolling-container.intro::after {
       content: "#Intro";
     }
@@ -271,6 +273,26 @@ figcaption {
     .scrolling-container.social::after {
       content: "Chap.3 : #Social";
     }
+
+/* Fonction scroll horizontal mobile */
+
+/* Aidé par l'IA : de la ligne 279 à 293, reprise du code .scrolling-container avec mes modifications pour la suite sans IA */
+
+  .scrolling-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    height: auto; 
+  }
+
+  .scrolling-container > div {
+    flex: 0 0 80vw; 
+    scroll-snap-align: start;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
 
 .chapter-details {
     display: none;
@@ -305,5 +327,9 @@ figcaption {
   transition: opacity 0.4s ease;
   opacity: 1;
 }
+
+  figcaption {
+    font-size: 11px;
+  }
 
 }

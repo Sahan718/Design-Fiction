@@ -1,5 +1,7 @@
 "use strict";
 
+//Toggle chapter details on click
+
 document.addEventListener("DOMContentLoaded", () => {
   const chapters = document.querySelectorAll('[class^="chapter"]:not(.chapter-details)');
 
@@ -15,6 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Change opacity of left and right columns based on scroll position
+
+// Cette fonction a été faite avec l'aide de ChatGPT (de la ligne 36 à la ligne 41)
 
   document.addEventListener("DOMContentLoaded", () => {
 
@@ -40,6 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+// Reset opacity of left and right columns on desktop view 
+
+// Cette fonction a été faite avec l'aide de ChatGPT
+
 function resetOpacityOnDesktop() {
   if (window.innerWidth > 768) {
     const allChapters = document.querySelectorAll('.chapter-details');
@@ -47,17 +56,15 @@ function resetOpacityOnDesktop() {
       const left = chapter.querySelector('.column-left');
       const right = chapter.querySelector('.column-right');
 
-      // Supprime les styles JS (inline)
+
       left.style.removeProperty('opacity');
       right.style.removeProperty('opacity');
     });
   }
 }
 
-// Appelle une fois au chargement
 resetOpacityOnDesktop();
 
-// Appelle aussi à chaque resize
 window.addEventListener('resize', resetOpacityOnDesktop);
 
 
